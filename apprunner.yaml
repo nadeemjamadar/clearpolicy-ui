@@ -1,0 +1,30 @@
+# AWS App Runner configuration (source: repository)
+# Use this when creating the service with "Configuration source: Repository"
+# and Runtime: Node.js 18 (managed runtime). For Dockerfile-based deploy,
+# use the console/API for port and env instead.
+
+version: 1.0
+runtime: nodejs18
+
+build:
+  commands:
+    build:
+      - npm ci
+      - npm run build
+  env:
+    - name: NEXT_TELEMETRY_DISABLED
+      value: "1"
+    - name: NODE_ENV
+      value: production
+
+run:
+  command: npm run start
+  network:
+    port: 3000
+  env:
+    - name: NODE_ENV
+      value: production
+    - name: NEXT_PUBLIC_MOCK_MODE
+      value: "true"
+    - name: NEXT_PUBLIC_API_BASE_URL
+      value: ""
