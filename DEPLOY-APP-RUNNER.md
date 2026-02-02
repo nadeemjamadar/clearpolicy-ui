@@ -8,16 +8,16 @@ This repo includes **`apprunner.yaml`** so App Runner can read build and run con
 
 ## Option A: Configuration from repository (apprunner.yaml)
 
-Use **Configuration source: Repository** and **Runtime: Node.js 18** so App Runner uses `apprunner.yaml` for build and run.
+Use **Configuration source: Repository** and **Runtime: Node.js 22** so App Runner uses `apprunner.yaml` for build and run.
 
 1. **Connect GitHub** (as in Option B below).
 2. **Configure build**:
-   - **Runtime**: **Node.js 18** (managed runtime).
+   - **Runtime**: **Node.js 22** (managed runtime).
    - **Configuration source**: **Repository** (App Runner will read `apprunner.yaml`).
 3. **Configure service**: Port **3000** is set in `apprunner.yaml`; set CPU/Memory in the console.
 4. Create & deploy.
 
-`apprunner.yaml` defines: build (`npm ci`, `npm run build`), run command (`npm run start`), port **3000**, and optional env vars.
+`apprunner.yaml` defines: runtime **nodejs22**, build (`npm ci`, `npm run build`), run command (`npm run start`), port **3000**, and optional env vars.
 
 ---
 

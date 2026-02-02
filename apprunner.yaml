@@ -1,10 +1,10 @@
 # AWS App Runner configuration (source: repository)
 # Use this when creating the service with "Configuration source: Repository"
-# and Runtime: Node.js 18 (managed runtime). For Dockerfile-based deploy,
+# and Runtime: Node.js 22 (managed runtime). For Dockerfile-based deploy,
 # use the console/API for port and env instead.
 
 version: 1.0
-runtime: nodejs18
+runtime: nodejs22
 
 build:
   commands:
